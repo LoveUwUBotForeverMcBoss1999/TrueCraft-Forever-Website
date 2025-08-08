@@ -3,283 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote for TrueCraft SMP - Support Our Server</title>
+    <title>Vote for TrueCraft SMP</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .vote-hero {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-            margin-top: 80px;
-        }
-
-        .vote-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .vote-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .vote-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .vote-card:hover::before {
-            left: 100%;
-        }
-
-        .vote-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-
-        .vote-site-name {
-            color: var(--accent-color);
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .vote-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .vote-btn {
-            padding: 1rem 2rem;
-            background: var(--accent-color);
-            color: var(--bg-primary);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-
-        .vote-btn:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        .vote-stats {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .vote-count {
-            color: var(--text-accent);
-            font-size: 0.9rem;
-        }
-
-        .why-vote {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
-        }
-
-        .why-vote h2 {
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .benefits {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .benefit {
-            background: var(--bg-accent);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-color);
-        }
-
-        .benefit h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .benefit p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .vote-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-
-            .vote-hero {
-                min-height: 50vh;
-                margin-top: 70px;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="/" class="logo">TrueCraft SMP</a>
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/">Home</a></li>
-                <li><a href="/vote">Vote</a></li>
-                <li><a href="https://truecraft-discord.mcboss.top/" target="_blank">Discord</a></li>
-                <li><a href="/timetally">Time Tally</a></li>
+            <a href="index.html" class="logo">TrueCraft SMP</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vote.html">Vote</a></li>
+                <li><a href="https://discord.com/invite/your-discord-link" target="_blank">Discord</a></li>
+                <li><a href="#">Time Tally</a></li>
             </ul>
+            <button class="mobile-menu">☰</button>
         </div>
     </nav>
 
-    <section class="vote-hero">
+    <section class="hero">
         <div class="hero-content">
             <h1>Vote for TrueCraft SMP</h1>
-            <p>Help us grow our community by voting on these server lists. Your support means everything to us!</p>
+            <p>Support our server by voting on the following sites and get rewarded for each vote!</p>
         </div>
     </section>
 
     <section class="info-section">
-        <div class="why-vote">
-            <h2>Why Vote for Us?</h2>
-            <p>Voting helps TrueCraft SMP reach more players and grow our friendly community. Every vote counts and helps us climb the rankings on server lists, making it easier for new players to discover our awesome server!</p>
-            
-            <div class="benefits">
-                <div class="benefit">
-                    <h4>Grow Our Community</h4>
-                    <p>More votes mean higher rankings, which brings more friendly players to our server and creates a more vibrant community for everyone.</p>
-                </div>
-                
-                <div class="benefit">
-                    <h4>Support the Server</h4>
-                    <p>Higher visibility helps us maintain and improve the server infrastructure, ensuring the best possible experience for all players.</p>
-                </div>
-                
-                <div class="benefit">
-                    <h4>Show Your Appreciation</h4>
-                    <p>Voting is a free way to show support for the hard work our staff puts into maintaining a friendly, safe environment.</p>
-                </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>TopMinecraftServers.org</h3>
+                <p>Vote for TrueCraft SMP on TopMinecraftServers.org to help us climb the rankings! Players who vote receive rewards to enhance their gameplay experience.</p>
+                <a href="https://topminecraftservers.org/server/41364" target="_blank" class="btn primary">Vote Now</a>
             </div>
-        </div>
-
-        <div class="vote-grid">
-            <div class="vote-card">
-                <div class="vote-site-name">Minecraft-MP</div>
-                <div class="vote-description">
-                    One of the most popular Minecraft server listing sites. Your vote here significantly boosts our visibility to new players looking for quality servers.
-                </div>
-                <a href="https://minecraft-mp.com/server-s347171" target="_blank" class="vote-btn">Vote on Minecraft-MP</a>
-                <div class="vote-stats">
-                    <div class="vote-count">Click to vote and help us climb the rankings!</div>
-                </div>
+            <div class="info-card">
+                <h3>MinecraftServers.org</h3>
+                <p>Show your support by voting on MinecraftServers.org. Every vote counts, and players are rewarded for their contribution!</p>
+                <a href="https://minecraftservers.org/server/677330" target="_blank" class="btn primary">Vote Now</a>
             </div>
-
-            <div class="vote-card">
-                <div class="vote-site-name">MinecraftServers.org</div>
-                <div class="vote-description">
-                    A trusted platform where Minecraft players discover new servers. Every vote helps showcase our friendly community to potential new members.
-                </div>
-                <a href="https://minecraftservers.org/server/677330" target="_blank" class="vote-btn">Vote on MinecraftServers.org</a>
-                <div class="vote-stats">
-                    <div class="vote-count">Your vote makes a difference!</div>
-                </div>
-            </div>
-
-            <div class="vote-card">
-                <div class="vote-site-name">TopMinecraftServers</div>
-                <div class="vote-description">
-                    A premier destination for finding the best Minecraft servers. Voting here helps establish TrueCraft SMP as a top-tier community server.
-                </div>
-                <a href="https://topminecraftservers.org/server/41364" target="_blank" class="vote-btn">Vote on TopMinecraftServers</a>
-                <div class="vote-stats">
-                    <div class="vote-count">Every vote counts towards our success!</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="why-vote">
-            <h2>Voting Guidelines</h2>
-            <p>Most voting sites allow you to vote once every 24 hours. We appreciate any votes you can spare! Remember that voting is completely free and takes just a few seconds of your time.</p>
-            
-            <div class="benefits">
-                <div class="benefit">
-                    <h4>Daily Voting</h4>
-                    <p>You can vote once per day on each site. Set a reminder or make it part of your daily routine to maximize your impact!</p>
-                </div>
-                
-                <div class="benefit">
-                    <h4>Share with Friends</h4>
-                    <p>Encourage other TrueCraft players to vote too. The more votes we get, the stronger our community becomes.</p>
-                </div>
+            <div class="info-card">
+                <h3>Minecraft-MP.com</h3>
+                <p>Cast your vote on Minecraft-MP.com to help spread the word about our friendly community. Get rewarded when you vote!</p>
+                <a href="https://minecraft-mp.com/server-s347171" target="_blank" class="btn primary">Vote Now</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
+        <p>© 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
     </footer>
 
-    <div class="toast" id="toast">Thank you for supporting TrueCraft SMP!</div>
+    <div class="toast">Vote submitted! Check your rewards in-game!</div>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('nav');
-            const navLinks = document.getElementById('navLinks');
-            
-            if (!nav.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Show thank you message when vote buttons are clicked
-        document.querySelectorAll('.vote-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                setTimeout(() => {
-                    const toast = document.getElementById('toast');
-                    toast.classList.add('show');
-                    setTimeout(() => {
-                        toast.classList.remove('show');
-                    }, 3000);
-                }, 100);
-            });
+        // Toast notification (for demonstration, shown briefly on page load)
+        window.addEventListener('load', () => {
+            const toast = document.querySelector('.toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         });
     </script>
 </body>
