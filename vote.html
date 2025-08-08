@@ -3,170 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrueCraft SMP - A Friendly Minecraft Community</title>
-    <meta name="description" content="Join TrueCraft SMP, a friendly, non-toxic Minecraft community where creativity thrives and friendships are built. Connect at truecraft-mc.mcboss.top!">
-    <meta name="keywords" content="Minecraft, SMP, TrueCraft, friendly community, vanilla Minecraft, whitelist, Discord">
+    <title>Vote for TrueCraft SMP</title>
+    <meta name="description" content="Support TrueCraft SMP by voting on top Minecraft server lists like TopMinecraftServers.org, MinecraftServers.org, and Minecraft-MP.com. Get rewarded for each vote!">
+    <meta name="keywords" content="Minecraft, TrueCraft SMP, vote, server voting, Minecraft server, rewards">
     <meta name="author" content="TrueCraft SMP">
 
     <!-- Open Graph Meta Tags for Social Media Previews -->
-    <meta property="og:title" content="TrueCraft SMP - A Friendly Minecraft Community">
-    <meta property="og:description" content="Join our welcoming Minecraft SMP server! Enjoy vanilla-style gameplay with a non-toxic community. Connect at truecraft-mc.mcboss.top and join our Discord!">
+    <meta property="og:title" content="Vote for TrueCraft SMP">
+    <meta property="og:description" content="Help TrueCraft SMP grow by voting on TopMinecraftServers.org, MinecraftServers.org, and Minecraft-MP.com. Earn in-game rewards for every vote!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://truecraft-web.mcboss.top/">
-    <meta property="og:image" content="https://truecraft-web.mcboss.top/images/preview-image.png">
-    <meta property="og:image:alt" content="TrueCraft SMP logo with a Minecraft landscape">
+    <meta property="og:url" content="https://truecraft-web.mcboss.top/vote.html">
+    <meta property="og:image" content="https://truecraft-web.mcboss.top/images/vote-preview-image.png">
+    <meta property="og:image:alt" content="TrueCraft SMP voting page with Minecraft server list logos">
     <meta property="og:site_name" content="TrueCraft SMP">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TrueCraft SMP - A Friendly Minecraft Community">
-    <meta name="twitter:description" content="Join TrueCraft SMP for a fun, non-toxic Minecraft experience. Connect at truecraft-mc.mcboss.top and join our Discord community!">
-    <meta name="twitter:image" content="https://truecraft-web.mcboss.top/images/preview-image.png">
-    <meta name="twitter:image:alt" content="TrueCraft SMP logo with a Minecraft landscape">
+    <meta name="twitter:title" content="Vote for TrueCraft SMP">
+    <meta name="twitter:description" content="Support TrueCraft SMP by voting on top Minecraft server lists and earn in-game rewards! Visit TopMinecraftServers.org, MinecraftServers.org, and Minecraft-MP.com.">
+    <meta name="twitter:image" content="https://truecraft-web.mcboss.top/images/vote-preview-image.png">
+    <meta name="twitter:image:alt" content="TrueCraft SMP voting page with Minecraft server list logos">
 
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Internal CSS to highlight the countdown timer */
-        .server-ip#timer-display {
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-accent));
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-color), 0 0 30px rgba(0, 255, 136, 0.5);
-            padding: 1.5rem 2rem;
-            transform: scale(1.05);
-            transition: all 0.3s ease, box-shadow 0.5s ease;
-        }
-
-        .server-ip#timer-display:hover {
-            box-shadow: 0 0 20px var(--accent-color), 0 0 40px rgba(0, 255, 136, 0.7);
-            transform: scale(1.08) translateY(-5px);
-            border-color: var(--accent-hover);
-        }
-
-        #timer-text {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--accent-color), #00aaff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        #timer-hint {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-top: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .server-ip#timer-display {
-                padding: 1rem 1.5rem;
-                transform: scale(1.03);
-            }
-
-            .server-ip#timer-display:hover {
-                transform: scale(1.05) translateY(-3px);
-            }
-
-            #timer-text {
-                font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            }
-        }
-
-        /* Anniversary section styles */
-        .anniversary-section {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        .anniversary-section h2 {
-            color: var(--accent-color);
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .anniversary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .anniversary-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .anniversary-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-
-        .anniversary-card h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .anniversary-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .anniversary-row {
-            display: none;
-        }
-
-        .anniversary-row.visible {
-            display: block;
-        }
-
-        .load-more-btn {
-            display: block;
-            margin: 1rem auto;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid var(--accent-color);
-            background: transparent;
-            color: var(--accent-color);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: 200px;
-            text-align: center;
-        }
-
-        .load-more-btn:hover {
-            background: var(--accent-color);
-            color: var(--bg-primary);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .anniversary-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .load-more-btn {
-                width: 150px;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="/" class="logo">TrueCraft SMP</a>
+            <a href="index.html" class="logo">TrueCraft SMP</a>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/vote">Vote</a></li>
-                <li><a href="https://truecraft-discord.mcboss.top/">Discord</a></li>
-                <li><a href="/timetally">Time Tally</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vote.html">Vote</a></li>
+                <li><a href="https://discord.com/invite/your-discord-link" target="_blank">Discord</a></li>
+                <li><a href="#">Time Tally</a></li>
             </ul>
             <button class="mobile-menu">☰</button>
         </div>
@@ -174,49 +42,27 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Time Tally</h1>
-            <p>Track the journey of TrueCraft SMP since our launch on August 9, 2025!</p>
-            <div class="server-ip" id="timer-display">
-                <code id="timer-text">Calculating...</code>
-                <div class="copy-hint" id="timer-hint">Time until/elapsed since launch</div>
-            </div>
-            <div class="cta-buttons">
-                <a href="#" class="btn">Join Discord</a>
-            </div>
+            <h1>Vote for TrueCraft SMP</h1>
+            <p>Support our server by voting on the following sites and get rewarded for each vote!</p>
         </div>
     </section>
 
-    <section class="anniversary-section">
-        <h2>Our Anniversaries</h2>
-        <div id="anniversary-container"></div>
-        <button class="load-more-btn" id="load-more">Load More</button>
-    </section>
-
     <section class="info-section">
-        <div class="join-steps">
-            <h2>Our Journey</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Launch Day</h4>
-                        <p>TrueCraft SMP officially launched on August 9, 2025, at 23:59:59 (Asia/Colombo, UTC+05:30), welcoming players to a friendly, non-toxic community.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Anniversaries</h4>
-                        <p>Celebrate with us every 365 days as we mark another year of creativity, friendship, and epic Minecraft adventures!</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Join the Community</h4>
-                        <p>Be part of our journey! Join our Discord to connect with players and stay updated on server events and milestones.</p>
-                    </div>
-                </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>TopMinecraftServers.org</h3>
+                <p>Vote for TrueCraft SMP on TopMinecraftServers.org to help us climb the rankings! Players who vote receive rewards to enhance their gameplay experience.</p>
+                <a href="https://topminecraftservers.org/server/41364" target="_blank" class="btn primary">Vote Now</a>
+            </div>
+            <div class="info-card">
+                <h3>MinecraftServers.org</h3>
+                <p>Show your support by voting on MinecraftServers.org. Every vote counts, and players are rewarded for their contribution!</p>
+                <a href="https://minecraftservers.org/server/677330" target="_blank" class="btn primary">Vote Now</a>
+            </div>
+            <div class="info-card">
+                <h3>Minecraft-MP.com</h3>
+                <p>Cast your vote on Minecraft-MP.com to help spread the word about our friendly community. Get rewarded when you vote!</p>
+                <a href="https://minecraft-mp.com/server-s347171" target="_blank" class="btn primary">Vote Now</a>
             </div>
         </div>
     </section>
@@ -225,135 +71,22 @@
         <p>© 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
     </footer>
 
-    <div class="toast" id="toast">Copied to clipboard!</div>
+    <div class="toast">Vote submitted! Check your rewards in-game!</div>
 
     <script>
         // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Timer logic
-        const launchDate = new Date('2025-08-09T23:59:59+05:30');
-        const timerText = document.getElementById('timer-text');
-        const timerHint = document.getElementById('timer-hint');
-
-        function updateTimer() {
-            const now = new Date();
-            const diff = launchDate - now;
-
-            if (diff > 0) {
-                // Countdown until launch
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                timerText.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                timerHint.textContent = 'Time until launch';
-            } else {
-                // Count up after launch
-                const elapsed = now - launchDate;
-                const years = Math.floor(elapsed / (1000 * 60 * 60 * 24 * 365));
-                const days = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-                timerText.textContent = `${years}y ${days}d ${hours}h ${minutes}m ${seconds}s`;
-                timerHint.textContent = 'Time since launch';
-            }
-        }
-
-        // Update timer every second
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Initial call
-
-        // Anniversary logic
-        const anniversaryContainer = document.getElementById('anniversary-container');
-        const loadMoreBtn = document.getElementById('load-more');
-        const now = new Date();
-        const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365;
-        const anniversaries = [];
-        let currentYear = launchDate.getFullYear();
-
-        // Generate anniversaries
-        for (let i = 1; i <= 20; i++) { // Generate up to 20 anniversaries for future-proofing
-            const anniversaryDate = new Date(launchDate.getTime() + i * millisecondsPerYear);
-            if (anniversaryDate <= now) {
-                anniversaries.push({
-                    year: i,
-                    date: anniversaryDate.toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    })
-                });
-            }
-        }
-
-        // Group anniversaries into rows of 5
-        const rows = [];
-        for (let i = 0; i < anniversaries.length; i += 5) {
-            rows.push(anniversaries.slice(i, i + 5));
-        }
-
-        // Render anniversary rows
-        function renderAnniversaries() {
-            anniversaryContainer.innerHTML = '';
-            rows.forEach((row, index) => {
-                const rowDiv = document.createElement('div');
-                rowDiv.className = `anniversary-row ${index < 1 ? 'visible' : ''}`; // Show first row initially
-                const gridDiv = document.createElement('div');
-                gridDiv.className = 'anniversary-grid';
-                row.forEach(anniversary => {
-                    const cardDiv = document.createElement('div');
-                    cardDiv.className = 'anniversary-card';
-                    cardDiv.innerHTML = `
-                        <h4>${anniversary.year}${anniversary.year === 1 ? 'st' : anniversary.year === 2 ? 'nd' : anniversary.year === 3 ? 'rd' : 'th'} Anniversary</h4>
-                        <p>${anniversary.date}</p>
-                    `;
-                    gridDiv.appendChild(cardDiv);
-                });
-                rowDiv.appendChild(gridDiv);
-                anniversaryContainer.appendChild(rowDiv);
-            });
-
-            // Hide "Load More" button if no more rows to show
-            if (document.querySelectorAll('.anniversary-row:not(.visible)').length === 0) {
-                loadMoreBtn.style.display = 'none';
-            } else {
-                loadMoreBtn.style.display = 'block';
-            }
-        }
-
-        // Load more anniversaries
-        loadMoreBtn.addEventListener('click', () => {
-            const hiddenRows = document.querySelectorAll('.anniversary-row:not(.visible)');
-            if (hiddenRows.length > 0) {
-                hiddenRows[0].classList.add('visible');
-            }
-            if (document.querySelectorAll('.anniversary-row:not(.visible)').length === 0) {
-                loadMoreBtn.style.display = 'none';
-            }
-        });
-
-        // Initial render
-        renderAnniversaries();
-
-        // Copy server IP to clipboard
-        const serverIp = document.querySelector('.server-ip');
-        const toast = document.getElementById('toast');
-
-        serverIp.addEventListener('click', () => {
-            navigator.clipboard.writeText('truecraft-mc.mcboss.top').then(() => {
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
-            });
+        // Toast notification (for demonstration, shown briefly on page load)
+        window.addEventListener('load', () => {
+            const toast = document.querySelector('.toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         });
     </script>
-</body>
+    </body>
 </html>
