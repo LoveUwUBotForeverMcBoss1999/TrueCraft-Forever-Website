@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueCraft SMP - A Friendly Minecraft Community</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">TrueCraft SMP</a>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/vote">Vote</a></li>
+                <li><a href="https://truecraft-discord.mcboss.top/" target="_blank">Discord</a></li>
+                <li><a href="/timetally">Time Tally</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TrueCraft SMP</h1>
+            <p>Join our friendly, non-toxic Minecraft community where creativity thrives and friendships are built!</p>
+            
+            <div class="server-ip" onclick="copyToClipboard('truecraft-mc.mcboss.top')">
+                <code>truecraft-mc.mcboss.top</code>
+                <div class="copy-hint">Click to copy</div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="https://truecraft-discord.mcboss.top/" class="btn primary" target="_blank">Join Discord</a>
+                <a href="/vote" class="btn">Vote for Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🌟 Friendly Community</h3>
+                <p>We pride ourselves on maintaining a welcoming, non-toxic environment where players of all skill levels can enjoy Minecraft together. Our staff actively ensures a positive experience for everyone.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>⚡ Simple & Fun</h3>
+                <p>No complicated plugins or overwhelming mechanics. Just pure vanilla-style gameplay with quality-of-life improvements to enhance your Minecraft experience.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🛡️ Safe Environment</h3>
+                <p>Zero tolerance for toxicity, griefing, or harassment. Our dedicated staff team monitors the server to ensure everyone can play peacefully and have fun.</p>
+            </div>
+        </div>
+
+        <div class="join-steps">
+            <h2>How to Join TrueCraft SMP</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Join Our Discord</h4>
+                        <p>Click the Discord button above to join our community server where you can chat with other players and get support.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Read the Rules</h4>
+                        <p>Make sure to read all server rules in our Discord before playing. Understanding and following the rules keeps our community friendly!</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Request Whitelist</h4>
+                        <p>Use the command <code>/add-whitelist ign:yourusername</code> in the commands channel to get access to the server.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Start Playing!</h4>
+                        <p>Once whitelisted, connect to <strong>truecraft-mc.mcboss.top</strong> and start your adventure with our amazing community!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
+    </footer>
+
+    <div class="toast" id="toast">Server IP copied to clipboard!</div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                showToast();
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!nav.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
