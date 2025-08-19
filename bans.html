@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueCraft SMP - Server Bans</title>
+    <meta name="description" content="View current server bans and punishments on TrueCraft SMP">
+    <meta name="keywords" content="Minecraft, SMP, TrueCraft, bans, punishments, server moderation">
+    <meta name="author" content="TrueCraft SMP">
+
+    <!-- Open Graph Meta Tags for Social Media Previews -->
+    <meta property="og:title" content="TrueCraft SMP - Server Bans">
+    <meta property="og:description" content="View current server bans and punishments on TrueCraft SMP">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://truecraft-web.mcboss.top/bans">
+    <meta property="og:site_name" content="TrueCraft SMP">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-accent: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-accent: #888888;
+            --accent-color: #00ff88;
+            --accent-hover: #00cc6a;
+            --border-color: #333333;
+            --danger-color: #ff4757;
+            --warning-color: #ffa502;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--danger-color), var(--warning-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .bans-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .bans-header {
+            background: var(--bg-accent);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .bans-header h2 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .bans-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bans-table th,
+        .bans-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .bans-table th {
+            background: var(--bg-accent);
+            color: var(--accent-color);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        .bans-table tr:hover {
+            background: var(--bg-accent);
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .player-head {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .punishment-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .punishment-type.temp-ban {
+            background: var(--warning-color);
+            color: var(--bg-primary);
+        }
+
+        .punishment-type.perm-ban {
+            background: var(--danger-color);
+            color: var(--text-primary);
+        }
+
+        .punishment-type.mute {
+            background: #3742fa;
+            color: var(--text-primary);
+        }
+
+        .reason-text {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--bg-accent);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid var(--danger-color);
+            border-radius: 12px;
+            color: var(--danger-color);
+        }
+
+        .no-bans {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .no-bans h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .bans-container {
+                overflow-x: auto;
+            }
+
+            .bans-table {
+                min-width: 800px;
+            }
+
+            .reason-text {
+                max-width: 200px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-accent);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">TrueCraft SMP</a>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/vote">Vote</a></li>
+                <li><a href="https://discord.truecraft.top/" target="_blank">Discord</a></li>
+                <li><a href="/timetally">Time Tally</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/bans" class="active">Bans</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Server Punishments</h1>
+            <p>Current active bans and punishments on TrueCraft SMP</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="totalBans">-</div>
+                <div class="stat-label">Total Records</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="activeBans">-</div>
+                <div class="stat-label">Active Punishments</div>
+            </div>
+        </div>
+
+        <div class="bans-container">
+            <div class="bans-header">
+                <h2>Punishment Records</h2>
+                <p>All server punishments and their details</p>
+            </div>
+            
+            <div id="bansContent">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading punishment records...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        function formatPunishmentType(type) {
+            switch(type) {
+                case 'TEMP_BAN':
+                    return '<span class="punishment-type temp-ban">Temp Ban</span>';
+                case 'PERM_BAN':
+                    return '<span class="punishment-type perm-ban">Perm Ban</span>';
+                case 'MUTE':
+                    return '<span class="punishment-type mute">Mute</span>';
+                default:
+                    return `<span class="punishment-type">${type}</span>`;
+            }
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            return new Date(dateString).toLocaleString();
+        }
+
+        function createPlayerHead(name) {
+            return `https://mc-heads.net/avatar/${encodeURIComponent(name)}`;
+        }
+
+        async function loadBans() {
+            const bansContent = document.getElementById('bansContent');
+            
+            try {
+                const response = await fetch('https://truecraft-bansapi.mcboss.top/api/punishments');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                const punishments = data.punishments || [];
+                
+                // Update stats
+                document.getElementById('totalBans').textContent = data.total_records || punishments.length;
+                document.getElementById('activeBans').textContent = punishments.length;
+                
+                if (punishments.length === 0) {
+                    bansContent.innerHTML = `
+                        <div class="no-bans">
+                            <h3>🎉 No Active Punishments</h3>
+                            <p>Great news! There are currently no active punishments on the server.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const tableHtml = `
+                    <table class="bans-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Type</th>
+                                <th>Reason</th>
+                                <th>Duration</th>
+                                <th>Operator</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${punishments.map(punishment => `
+                                <tr>
+                                    <td>
+                                        <div class="player-info">
+                                            <img src="${createPlayerHead(punishment.name)}" 
+                                                 alt="${punishment.name}" 
+                                                 class="player-head"
+                                                 onerror="this.style.display='none'">
+                                            <span>${punishment.name}</span>
+                                        </div>
+                                    </td>
+                                    <td>${formatPunishmentType(punishment.punishmentType)}</td>
+                                    <td>
+                                        <div class="reason-text" title="${punishment.reason}">
+                                            ${punishment.reason}
+                                        </div>
+                                    </td>
+                                    <td>${punishment.duration || 'Permanent'}</td>
+                                    <td>
+                                        <div class="player-info">
+                                            <img src="${createPlayerHead(punishment.operator)}" 
+                                                 alt="${punishment.operator}" 
+                                                 class="player-head"
+                                                 onerror="this.style.display='none'">
+                                            <span>${punishment.operator}</span>
+                                        </div>
+                                    </td>
+                                    <td>${formatDate(punishment.start)}</td>
+                                    <td>${punishment.end ? formatDate(punishment.end) : 'Never'}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+                
+                bansContent.innerHTML = tableHtml;
+                
+            } catch (error) {
+                console.error('Error loading bans:', error);
+                bansContent.innerHTML = `
+                    <div class="error">
+                        <h3>⚠️ Failed to Load Data</h3>
+                        <p>Unable to fetch punishment records. Please try again later.</p>
+                        <p><small>Error: ${error.message}</small></p>
+                    </div>
+                `;
+                
+                // Reset stats on error
+                document.getElementById('totalBans').textContent = 'Error';
+                document.getElementById('activeBans').textContent = 'Error';
+            }
+        }
+
+        // Load bans when page loads
+        document.addEventListener('DOMContentLoaded', loadBans);
+
+        // Refresh every 5 minutes
+        setInterval(loadBans, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
