@@ -14,6 +14,7 @@
     /* Additional colors */
     --primary-light: #9B5FFF;
     --primary-dark: #5A2FD2;
+    --primary-too-dark: #4000b6;
     --secondary-light: #FFC533;
     --secondary-dark: #CC8E00;
     --background-lighter: #2A2B30;
@@ -202,7 +203,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -220,56 +221,47 @@ body {
 }
 
 .hero-left, .hero-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
 }
 
 .hero-left {
-    left: 2%;
+    justify-content: flex-start;
 }
 
 .hero-right {
-    right: 2%;
+    justify-content: flex-end;
 }
 
-.hero-left img, .hero-right img {
+.hero-icon {
     width: 50px;
     height: 50px;
-    filter: brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(331%) hue-rotate(202deg) brightness(102%) contrast(96%);
+    filter: brightness(0) saturate(100%) invert(19%) sepia(56%) saturate(6071%) hue-rotate(249deg) brightness(94%) contrast(121%);
+    flex-shrink: 0;
 }
 
-.server-ip {
-    color: var(--primary-light);
+.server-ip, .discord-link {
+    color: var(--primary-dark);
     cursor: pointer;
     font-family: "Rubik", sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     line-height: 1.2;
+    text-decoration: none;
 }
 
-.server-ip small {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--text-light);
-    font-weight: 400;
-    margin-top: 0.2rem;
+.server-ip {
+    text-align: left;
 }
 
 .discord-link {
-    color: var(--primary-light);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-    line-height: 1.2;
+    text-align: right;
 }
 
-.discord-link small {
+.sub-text {
     display: block;
     font-size: 0.8rem;
     color: var(--text-light);
@@ -319,8 +311,8 @@ body {
 }
 
 .newspaper-main:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 .newspaper-banner {
@@ -370,8 +362,8 @@ body {
 }
 
 .more-info-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(122, 63, 242, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(122, 63, 242, 0.4);
 }
 
 /* Small Newspapers Grid */
@@ -391,7 +383,7 @@ body {
 }
 
 .newspaper-small:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     border-color: var(--primary);
 }
 
@@ -437,7 +429,7 @@ body {
 
 .more-newspapers-btn:hover {
     background: var(--secondary-light);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 /* Footer */
@@ -511,21 +503,24 @@ body {
     text-align: center;
     padding: 3rem;
     color: var(--text-muted);
+    background: var(--background-panel);
+    border-radius: 15px;
+    border: 1px solid rgba(122, 63, 242, 0.1);
 }
 
 .error {
     text-align: center;
     padding: 3rem;
     color: var(--accent);
+    background: var(--background-panel);
+    border-radius: 15px;
+    border: 1px solid rgba(233, 69, 96, 0.3);
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 1200px) {
-    .hero-left {
-        left: 1%;
-    }
-    .hero-right {
-        right: 1%;
+    .hero-content {
+        padding: 0 1.5rem;
     }
     .hero-logo img {
         max-width: 280px;
@@ -534,7 +529,7 @@ body {
 
 @media (max-width: 992px) {
     .navbar {
-        padding: 1rem 1rem;
+        padding: 1rem;
     }
     
     .nav-links {
@@ -545,17 +540,16 @@ body {
         font-size: 1rem;
     }
     
-    .hero-left, .hero-right {
-        position: static;
-        transform: none;
-        margin: 1rem;
-        justify-content: center;
-    }
-    
     .hero-content {
         flex-direction: column;
-        padding: 2rem 1rem;
         gap: 2rem;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    
+    .hero-left, .hero-right {
+        justify-content: center;
+        flex: none;
     }
     
     .hero-logo {
@@ -572,6 +566,16 @@ body {
     
     .hero-logo img {
         max-width: 250px;
+    }
+    
+    .hero-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .server-ip, .discord-link {
+        font-size: 1rem;
+        text-align: center;
     }
     
     .main-content {
@@ -617,13 +621,17 @@ body {
         max-width: 200px;
     }
     
-    .hero-left img, .hero-right img {
+    .hero-icon {
         width: 40px;
         height: 40px;
     }
     
     .server-ip, .discord-link {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .sub-text {
+        font-size: 0.7rem;
     }
     
     .main-content {
@@ -698,17 +706,17 @@ body {
         gap: 0.5rem;
     }
     
-    .hero-left img, .hero-right img {
+    .hero-icon {
         width: 35px;
         height: 35px;
     }
     
     .server-ip, .discord-link {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
-    .server-ip small, .discord-link small {
-        font-size: 0.7rem;
+    .sub-text {
+        font-size: 0.65rem;
     }
     
     .main-content {
@@ -755,13 +763,17 @@ body {
         max-width: 140px;
     }
     
-    .hero-left img, .hero-right img {
+    .hero-icon {
         width: 30px;
         height: 30px;
     }
     
     .server-ip, .discord-link {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .sub-text {
+        font-size: 0.6rem;
     }
     
     .nav-links a {
@@ -775,5 +787,9 @@ body {
     
     .newspaper-description {
         font-size: 0.85rem;
+    }
+    
+    .hero-content {
+        gap: 0.8rem;
     }
 }
