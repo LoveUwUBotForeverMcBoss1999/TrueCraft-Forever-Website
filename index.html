@@ -3,174 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrueCraft SMP - A Friendly Minecraft Community</title>
-    <meta name="description" content="Join TrueCraft SMP, a friendly, non-toxic Minecraft community where creativity thrives and friendships are built. Connect at mc.truecraft.top!">
-    <meta name="keywords" content="Minecraft, SMP, TrueCraft, friendly community, vanilla Minecraft, whitelist, Discord">
-    <meta name="author" content="TrueCraft SMP">
-
-    <!-- Open Graph Meta Tags for Social Media Previews -->
-    <meta property="og:title" content="TrueCraft SMP - A Friendly Minecraft Community">
-    <meta property="og:description" content="Join our welcoming Minecraft SMP server! Enjoy vanilla-style gameplay with a non-toxic community. Connect at mc.truecraft.top and join our Discord!">
+    <title>TrueCraft Network - Minecraft Server</title>
+    <meta name="description" content="Join TrueCraft Network - Experience Minecraft like never before with Lifesteal, Survival, and more game modes!">
+    <meta name="keywords" content="minecraft, server, lifesteal, survival, truecraft, network">
+    <meta property="og:title" content="TrueCraft Network - Minecraft Server">
+    <meta property="og:description" content="Experience Minecraft like never before with the Lifesteal Mod on the TrueCraft Network. Steal health, strategize, and dominate in multiplayer gameplay!">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://truecraft.top">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://truecraft-web.mcboss.top/">
-    <meta property="og:image" content="https://truecraft-web.mcboss.top/images/preview-image.png">
-    <meta property="og:image:alt" content="TrueCraft SMP logo with a Minecraft landscape">
-    <meta property="og:site_name" content="TrueCraft SMP">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TrueCraft SMP - A Friendly Minecraft Community">
-    <meta name="twitter:description" content="Join TrueCraft SMP for a fun, non-toxic Minecraft experience. Connect at mc.truecraft.top and join our Discord community!">
-    <meta name="twitter:image" content="https://truecraft-web.mcboss.top/images/preview-image.png">
-    <meta name="twitter:image:alt" content="TrueCraft SMP logo with a Minecraft landscape">
-
+    
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">TrueCraft SMP</a>
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/">Home</a></li>
-                <li><a href="/vote">Vote</a></li>
-                <li><a href="https://discord.truecraft.top/" target="_blank">Discord</a></li>
-                <li><a href="/timetally">Time Tally</a></li>
-                <li><a href="/feedback">Feedback</a></li>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="https://store.truecraft.top/"><i class="fas fa-shopping-cart"></i> Store</a></li>
+                <li><a href="/vote"><i class="fas fa-vote-yea"></i> Vote</a></li>
+                <li><a href="/rules"><i class="fas fa-gavel"></i> Rules</a></li>
+                <li><a href="https://knowledgebase.truecraft.top/" target="_blank"><i class="fas fa-book"></i> Knowledge Base</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-banner"></div>
+        <div class="hero-overlay"></div>
+        <div class="ash-particles" id="ash-particles"></div>
+        
         <div class="hero-content">
-            <h1>TrueCraft SMP</h1>
-            <p>Join our friendly, non-toxic Minecraft community where creativity thrives and friendships are built!</p>
-            
-            <div class="server-ip" onclick="copyToClipboard('mc.truecraft.top')">
-                <code>mc.truecraft.top</code>
-                <div class="copy-hint">Click to copy</div>
+            <!-- Left Side - Server IP -->
+            <div class="hero-left">
+                <div class="hero-text">
+                    <span class="main-text" onclick="copyToClipboard('mc.truecraft.top')" style="text-align: center;" >MC.TRUECRAFT.TOP</span>
+                    <span class="sub-text default" style="text-align: center;">Join Now</span>
+                    <span class="sub-text hover" style="text-align: center;">Click to Copy</span>
+                </div>
             </div>
 
-            <div class="cta-buttons">
-                <a href="https://discord.truecraft.top/" class="btn primary" target="_blank">Join Discord</a>
-                <a href="/vote" class="btn">Vote for Us</a>
+            <!-- Center - Logo -->
+            <div class="hero-logo">
+                <img src="images/logo.png" alt="TrueCraft Network Logo">
             </div>
-        </div>
-    </section>
 
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>🌟 Friendly Community</h3>
-                <p>We pride ourselves on maintaining a welcoming, non-toxic environment where players of all skill levels can enjoy Minecraft together. Our staff actively ensures a positive experience for everyone.</p>
-            </div>
-            
-            <div class="info-card">
-                <h3>⚡ Simple & Fun</h3>
-                <p>No complicated plugins or overwhelming mechanics. Just pure vanilla-style gameplay with quality-of-life improvements to enhance your Minecraft experience.</p>
-            </div>
-            
-            <div class="info-card">
-                <h3>🛡️ Safe Environment</h3>
-                <p>Zero tolerance for toxicity, griefing, or harassment. Our dedicated staff team monitors the server to ensure everyone can play peacefully and have fun.</p>
-            </div>
-        </div>
-
-        <div class="join-steps">
-            <h2>How to Join TrueCraft SMP</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Join Our Discord</h4>
-                        <p>Click the Discord button above to join our community server where you can chat with other players and get support.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Read the Rules</h4>
-                        <p>Make sure to read all server rules in our Discord before playing. Understanding and following the rules keeps our community friendly!</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Request Whitelist</h4>
-                        <p>Use the command <code>/add-whitelist ign:yourusername</code> in the commands channel to get access to the server.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>Start Playing!</h4>
-                        <p>Once whitelisted, connect to <strong>mc.truecraft.top</strong> and start your adventure with our amazing community!</p>
-                    </div>
+            <!-- Right Side - Discord -->
+            <div class="hero-right">
+                <div class="hero-text">
+                    <a href="https://discord.truecraft.top/" target="_blank" class="discord-link" style="text-align: center;">
+                        <span class="main-text">JOIN DISCORD</span>
+                        <span class="sub-text default">Community</span>
+                        <span class="sub-text hover">DISCORD.TRUECRAFT.TOP</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-header">
+                <h1>Welcome to TrueCraft Network</h1>
+                <p>Experience the ultimate Minecraft adventure with our custom game modes and active community.</p>
+            </div>
+            
+            <div class="game-modes">
+                <div class="game-mode">
+                    <img src="images/heart.png" alt="LifeSteal Icon" class="game-mode-icon">
+                    
+                    <h3><br>LifeSteal</h3>
+                    <p>Steal hearts from other players in intense PvP battles and become the strongest survivor.</p>
+                </div>
+                <div class="game-mode">
+                    <img src="images/Crafting_Table.png" alt="Survival Icon" class="game-mode-icon">
+                    <h3><br>Survival</h3>
+                    <p>Classic survival experience with enhanced features, custom items, and protected builds.</p>
+                </div>
+            </div>
+            
+            <div class="join-steps">
+                <h2>How to Join</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Login with Discord</h3>
+                            <p>Visit <a href="https://panel.truecraft.top/" target="_blank" class="step-link">PANEL.TRUECRAFT.TOP</a> and authenticate with Discord</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Add Minecraft Username</h3>
+                            <p>Enter your exact Minecraft username in the panel</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Get Whitelisted</h3>
+                            <p>Click "Add to Whitelist" and start playing instantly!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-newspaper"></i> Latest News</h2>
+            
+            <!-- Main News -->
+            <div id="main-news" class="main-news loading">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading latest news...</p>
+                </div>
+            </div>
+
+            <!-- Additional News -->
+            <div class="news-grid" id="news-grid">
+                <!-- News articles will be loaded here -->
+            </div>
+
+            <a href="https://news.truecraft.top/newspapers" class="more-news-btn" target="_blank">
+                <i class="fas fa-external-link-alt"></i> View All News
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="TrueCraft Network Logo">
+                        <h3>TrueCraft Network</h3>
+                    </div>
+                    <p>Join thousands of players in the ultimate Minecraft experience. Start your adventure today!</p>
+                    <div class="ip-container" id="ipContainer" onclick="copyServerIP()">
+                        <i class="fas fa-copy"></i>
+                        <span class="ip-text">MC.TRUECRAFT.TOP</span>
+                    </div><br>
+                    <div class="social-links">
+                        <a href="https://discord.truecraft.top/" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@truecraftmc" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <ul>
+                        <li><a href="/terms" target="_blank">Terms of Service</a></li>
+                        <li><a href="/privacy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="/rules">Server Rules</a></li>
+                        <li><a href="https://knowledgebase.truecraft.top/" target="_blank">Knowledge Base</a></li>
+                        <li><a href="https://news.truecraft.top/" target="_blank">News</a></li>
+                        <li><a href="https://panel.truecraft.top/" target="_blank">Panel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> Store</h3>
+                    <p>Support the server and unlock exclusive perks, ranks, and cosmetics.</p>
+                    <a href="https://store.truecraft.top/" class="footer-btn"><i class="fas fa-shopping-cart"></i> Visit Store</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrueCraft Network. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <div class="toast" id="toast">Server IP copied to clipboard!</div>
-
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            function copyServerIP() {
+            const container = document.getElementById('ipContainer');
+            const ipToCopy = 'mc.truecraft.top';
+            
+            // Copy to clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(ipToCopy).then(() => {
+                    showCopied();
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = ipToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopied();
+            }
         }
 
+        function showCopied() {
+            const container = document.getElementById('ipContainer');
+            const icon = container.querySelector('i');
+            const text = container.querySelector('.ip-text');
+            
+            // Add copied class
+            container.classList.add('copied');
+            
+            // Change icon to check
+            icon.className = 'fas fa-check';
+            
+            // Change text temporarily
+            const originalText = text.textContent;
+            text.textContent = 'COPIED!';
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                container.classList.remove('copied');
+                icon.className = 'fas fa-copy';
+                text.textContent = originalText;
+            }, 2000);
+        }
+
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Copy to clipboard
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                showToast();
-            }).catch(function(err) {
-                // Fallback for older browsers
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('Server IP copied to clipboard!');
+                });
+            } else {
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
                 document.body.appendChild(textArea);
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                showToast();
-            });
+                showNotification('Server IP copied to clipboard!');
+            }
         }
 
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            document.body.appendChild(notification);
+            
             setTimeout(() => {
-                toast.classList.remove('show');
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
             }, 3000);
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('nav');
-            const navLinks = document.getElementById('navLinks');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            if (!nav.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
-        });
+        // Load news
+        async function loadNews() {
+            try {
+                // Load main news
+                const mainResponse = await fetch('https://news.truecraft.top/api/newspaper/1');
+                if (mainResponse.ok) {
+                    const mainData = await mainResponse.json();
+                    if (mainData.success && mainData.newspaper) {
+                        displayMainNews(mainData.newspaper);
+                    }
+                }
 
-        // Smooth scrolling for internal links
+                // Load additional news
+                const newsGrid = document.getElementById('news-grid');
+                let newsHtml = '';
+                
+                for (let i = 2; i <= 5; i++) {
+                    try {
+                        const response = await fetch(`https://news.truecraft.top/api/newspaper/${i}`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data.success && data.newspaper) {
+                                newsHtml += createNewsCard(data.newspaper);
+                            }
+                        }
+                    } catch (error) {
+                        console.error(`Failed to load news ${i}:`, error);
+                    }
+                }
+                
+                if (newsHtml) {
+                    newsGrid.innerHTML = newsHtml;
+                } else {
+                    newsGrid.innerHTML = '<div class="no-news">No additional news available.</div>';
+                }
+                
+            } catch (error) {
+                console.error('Failed to load news:', error);
+                document.getElementById('main-news').innerHTML = '<div class="error">Failed to load news.</div>';
+            }
+        }
+
+        function displayMainNews(news) {
+            const mainNewsEl = document.getElementById('main-news');
+            const imageUrl = news.banner_image.startsWith('http') ? news.banner_image : `https://news.truecraft.top/static/${news.banner_image}`;
+            
+            mainNewsEl.innerHTML = `
+                <div class="main-news-content">
+                    <img src="${imageUrl}" alt="${news.title}" class="main-news-image">
+                    <div class="main-news-text">
+                        <div class="news-meta">
+                            <i class="fas fa-user"></i> ${news.author}
+                            <span class="separator">•</span>
+                            <i class="fas fa-calendar"></i> ${new Date(news.date).toLocaleDateString()}
+                        </div>
+                        <h2>${news.title}</h2>
+                        <p>${news.description}</p>
+                        <a href="https://news.truecraft.top/newspaper/${news.filename}" target="_blank" class="read-more-btn">
+                            <i class="fas fa-book-open"></i> Read Full Article
+                        </a>
+                    </div>
+                </div>
+            `;
+            mainNewsEl.classList.remove('loading');
+        }
+
+        function createNewsCard(news) {
+            const imageUrl = news.banner_image.startsWith('http') ? news.banner_image : `https://news.truecraft.top/static/${news.banner_image}`;
+            
+            return `
+                <div class="news-card">
+                    <img src="${imageUrl}" alt="${news.title}" class="news-image">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <i class="fas fa-user"></i> ${news.author}
+                            <span class="separator">•</span>
+                            <i class="fas fa-calendar"></i> ${new Date(news.date).toLocaleDateString()}
+                        </div>
+                        <h3>${news.title}</h3>
+                        <p>${news.description}</p>
+                        <a href="https://news.truecraft.top/newspaper/${news.filename}" target="_blank" class="news-link">
+                            <i class="fas fa-arrow-right"></i> Read More
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
+        });
+
+        // Create ash particles
+        function createAshParticles() {
+            const ashContainer = document.getElementById('ash-particles');
+            
+            for (let i = 0; i < 60; i++) {
+                const ash = document.createElement('div');
+                ash.className = 'ash-particle';
+                
+                const leftPos = Math.random() * 100;
+                const duration = 8 + Math.random() * 8; // 8-16 seconds
+                const delay = Math.random() * 12; // 0-12 seconds delay
+                const drift = (Math.random() - 0.5) * 300; // Horizontal drift
+                const driftEnd = drift + (Math.random() - 0.5) * 200;
+                
+                ash.style.left = leftPos + '%';
+                ash.style.setProperty('--duration', duration + 's');
+                ash.style.setProperty('--delay', delay + 's');
+                ash.style.setProperty('--drift', drift + 'px');
+                ash.style.setProperty('--drift-end', driftEnd + 'px');
+                
+                ashContainer.appendChild(ash);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNews();
+            createAshParticles();
         });
     </script>
 </body>
-
 </html>
-

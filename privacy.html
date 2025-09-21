@@ -3,65 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrueCraft SMP - Privacy Policy</title>
-    <meta name="description" content="Privacy Policy for TrueCraft SMP. We respect your privacy and protect all user data.">
+    <title>Privacy Policy • TrueCraft Network</title>
+    <meta name="description" content="Learn how TrueCraft Network collects, uses, and protects your personal information. Our comprehensive privacy policy explains our data practices.">
+    <meta name="keywords" content="privacy, policy, truecraft, network, minecraft, server, data, protection">
+    <meta property="og:title" content="Privacy Policy • TrueCraft Network">
+    <meta property="og:description" content="Privacy Policy for TrueCraft Network - Understanding how we handle your data and protect your privacy.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://truecraft.top/privacy">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">TrueCraft SMP</a>
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/">Home</a></li>
-                <li><a href="/vote">Vote</a></li>
-                <li><a href="https://discord.truecraft.top/" target="_blank">Discord</a></li>
-                <li><a href="/timetally">Time Tally</a></li>
-                <li><a href="/feedback">Feedback</a></li>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="https://store.truecraft.top/"><i class="fas fa-shopping-cart"></i> Store</a></li>
+                <li><a href="/vote"><i class="fas fa-vote-yea"></i> Vote</a></li>
+                <li><a href="/rules"><i class="fas fa-gavel"></i> Rules</a></li>
+                <li><a href="https://knowledgebase.truecraft.top/" target="_blank"><i class="fas fa-book"></i> Knowledge Base</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-banner"></div>
+        <div class="hero-overlay"></div>
+        <div class="ash-particles" id="ash-particles"></div>
+        
         <div class="hero-content">
-            <h1>Privacy Policy</h1>
-            <p>Your privacy matters. We respect and protect all data collected from TrueCraft SMP players and rank buyers.</p>
+            <!-- Left Side - Server IP -->
+            <div class="hero-left">
+                <div class="hero-text">
+                    <span class="main-text" onclick="copyToClipboard('mc.truecraft.top')" style="text-align: center;" >MC.TRUECRAFT.TOP</span>
+                    <span class="sub-text default" style="text-align: center;">Join Now</span>
+                    <span class="sub-text hover" style="text-align: center;">Click to Copy</span>
+                </div>
+            </div>
+
+            <!-- Center - Logo -->
+            <div class="hero-logo">
+                <img src="images/logo.png" alt="TrueCraft Network Logo">
+            </div>
+
+            <!-- Right Side - Discord -->
+            <div class="hero-right">
+                <div class="hero-text">
+                    <a href="https://discord.truecraft.top/" target="_blank" class="discord-link" style="text-align: center;">
+                        <span class="main-text">JOIN DISCORD</span>
+                        <span class="sub-text default">Community</span>
+                        <span class="sub-text hover">DISCORD.TRUECRAFT.TOP</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>Information We Collect</h3>
-                <p>We only collect information necessary to process purchases and provide server access (username, email, payment details).</p>
+    <!-- Privacy Content Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-header">
+                <h1>Privacy Policy</h1>
+                <p>This privacy policy explains how TrueCraft Network collects, uses, and protects your personal information.</p>
             </div>
             
-            <div class="info-card">
-                <h3>Data Usage</h3>
-                <p>All data is used solely for server management and rank delivery. We <strong>do not share, sell, or distribute</strong> your information to any third party.</p>
+            <div class="terms-content">
+                <div class="terms-section">
+                    <h2><i class="fas fa-database"></i> Information We Collect</h2>
+                    <p>We collect essential information to provide our gaming services effectively. This includes basic account details such as your Minecraft username, Discord account information when linking accounts, and email addresses for account verification purposes. Most of this information is provided voluntarily during registration or account setup processes.</p>
+                    <p>Additionally, we automatically collect technical information including your IP address when you connect to our servers. This data helps us maintain server security, prevent abuse, and ensure fair gameplay for all users in our community.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-shield-alt"></i> How We Use Your Data</h2>
+                    <p>Your information is used primarily to enhance your gaming experience and maintain a safe community environment. IP addresses and connection logs are stored to assist our moderation team with various duties including spam prevention, detecting unauthorized alternate accounts, and investigating rule violations.</p>
+                    <p>We may also use collected data to communicate important server updates, security notices, or community announcements through appropriate channels such as Discord or in-game messaging systems.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-cookie-bite"></i> Cookies and Tracking</h2>
+                    <p>Our website utilizes cookies to enhance your browsing experience and provide personalized functionality. These small data files store non-identifiable information with your consent, which is obtained when you first visit our site and interact with the cookie notice.</p>
+                    <p>Cookie data may include recently viewed content identifiers, session tokens for maintaining your login status, and preference settings to customize your experience. If you select "Remember Me" during login, we store a secure, anonymous identifier to automatically authenticate you during future visits.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-user-friends"></i> Data Sharing</h2>
+                    <p>TrueCraft Network does not sell, trade, or otherwise transfer your personal information to third parties without your consent. We may share limited data only when required by law or when necessary to protect the rights, property, or safety of our community members.</p>
+                    <p>Service providers who assist with website hosting, payment processing, or other technical services may have access to certain data, but only as necessary to perform their designated functions and under strict confidentiality agreements.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-lock"></i> Data Security</h2>
+                    <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes secure data transmission protocols, encrypted storage systems, and restricted access controls for our staff members.</p>
+                    <p>While we strive to use commercially acceptable means to protect your information, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-user-times"></i> Account Deletion</h2>
+                    <p>You have the right to request deletion of your account and associated personal data. Account deletion requests can be submitted through our Discord community or by contacting our administration team directly. Upon approval, we will remove all identifiable information related to your account from our systems.</p>
+                    <p>Please note that certain anonymized data may be retained for statistical purposes or as required by law, but this information cannot be used to identify you personally after account deletion.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-child"></i> Minors and Parental Rights</h2>
+                    <p>TrueCraft Network is designed to be family-friendly, but we do not knowingly collect personal information from children under 13 years of age. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information promptly.</p>
+                    <p>Parents or guardians who believe their child has provided personal information to us may contact our support team to request review and removal of such data.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-edit"></i> Policy Updates</h2>
+                    <p>This privacy policy may be updated periodically to reflect changes in our practices, services, or applicable regulations. We will notify users of significant changes through our Discord community, website announcements, or other appropriate communication methods.</p>
+                    <p>Continued use of TrueCraft Network services after policy updates constitutes acceptance of the revised terms. We encourage you to review this policy regularly to stay informed about how we protect your information.</p>
+                </div>
+
+                <div class="terms-section">
+                    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                    <p>If you have questions about this privacy policy, wish to exercise your data rights, or need assistance with privacy-related concerns, please contact us through our Discord community at <a href="https://discord.truecraft.top/" target="_blank" class="terms-link">discord.truecraft.top</a> or reach out to our support team through the appropriate channels listed on our website.</p>
+                </div>
             </div>
-            
-            <div class="info-card">
-                <h3>Data Security</h3>
-                <p>We implement security measures to protect your personal data. However, no online system is 100% secure, and users must use strong passwords and secure payment methods.</p>
-            </div>
-            
-            <div class="info-card">
-                <h3>Changes to Privacy Policy</h3>
-                <p>We may update this Privacy Policy from time to time. Updates are effective immediately upon posting on this page.</p>
+
+            <div class="terms-footer">
+                <p><strong>Last updated:</strong> September 21, 2025</p>
+                <p>Your privacy is important to us, and we are committed to protecting your personal information.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TrueCraft SMP. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="TrueCraft Network Logo">
+                        <h3>TrueCraft Network</h3>
+                    </div>
+                    <p>Join thousands of players in the ultimate Minecraft experience. Start your adventure today!</p>
+                    <div class="ip-container" id="ipContainer" onclick="copyServerIP()">
+                        <i class="fas fa-copy"></i>
+                        <span class="ip-text">MC.TRUECRAFT.TOP</span>
+                    </div><br>
+                    <div class="social-links">
+                        <a href="https://discord.truecraft.top/" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@truecraftmc" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <ul>
+                        <li><a href="/terms" target="_blank">Terms of Service</a></li>
+                        <li><a href="/privacy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="/rules">Server Rules</a></li>
+                        <li><a href="https://knowledgebase.truecraft.top/" target="_blank">Knowledge Base</a></li>
+                        <li><a href="https://news.truecraft.top/" target="_blank">News</a></li>
+                        <li><a href="https://panel.truecraft.top/" target="_blank">Panel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> Store</h3>
+                    <p>Support the server and unlock exclusive perks, ranks, and cosmetics.</p>
+                    <a href="https://store.truecraft.top/" class="footer-btn"><i class="fas fa-shopping-cart"></i> Visit Store</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrueCraft Network. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+            function copyServerIP() {
+            const container = document.getElementById('ipContainer');
+            const ipToCopy = 'mc.truecraft.top';
+            
+            // Copy to clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(ipToCopy).then(() => {
+                    showCopied();
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = ipToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopied();
+            }
         }
+
+        function showCopied() {
+            const container = document.getElementById('ipContainer');
+            const icon = container.querySelector('i');
+            const text = container.querySelector('.ip-text');
+            
+            // Add copied class
+            container.classList.add('copied');
+            
+            // Change icon to check
+            icon.className = 'fas fa-check';
+            
+            // Change text temporarily
+            const originalText = text.textContent;
+            text.textContent = 'COPIED!';
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                container.classList.remove('copied');
+                icon.className = 'fas fa-copy';
+                text.textContent = originalText;
+            }, 2000);
+        }
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('Server IP copied to clipboard!');
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('Server IP copied to clipboard!');
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Create ash particles
+        function createAshParticles() {
+            const ashContainer = document.getElementById('ash-particles');
+            
+            for (let i = 0; i < 60; i++) {
+                const ash = document.createElement('div');
+                ash.className = 'ash-particle';
+                
+                const leftPos = Math.random() * 100;
+                const duration = 8 + Math.random() * 8; // 8-16 seconds
+                const delay = Math.random() * 12; // 0-12 seconds delay
+                const drift = (Math.random() - 0.5) * 300; // Horizontal drift
+                const driftEnd = drift + (Math.random() - 0.5) * 200;
+                
+                ash.style.left = leftPos + '%';
+                ash.style.setProperty('--duration', duration + 's');
+                ash.style.setProperty('--delay', delay + 's');
+                ash.style.setProperty('--drift', drift + 'px');
+                ash.style.setProperty('--drift-end', driftEnd + 'px');
+                
+                ashContainer.appendChild(ash);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createAshParticles();
+        });
     </script>
+
+    <style>
+        .terms-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .terms-section {
+            background: var(--background-panel);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .terms-section:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .terms-section h2 {
+            color: var(--primary-light);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .terms-section p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .terms-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .terms-link:hover {
+            color: var(--secondary);
+        }
+
+        .terms-footer {
+            background: var(--background-panel);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .terms-footer p {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .terms-footer p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .terms-section {
+                padding: 1.5rem;
+            }
+
+            .terms-section h2 {
+                font-size: 1.3rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .terms-footer {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </body>
 </html>
-

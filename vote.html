@@ -3,92 +3,799 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote for TrueCraft SMP</title>
-    <meta name="description" content="Support TrueCraft SMP by voting on top Minecraft server lists like TopMinecraftServers.org, MinecraftServers.org, and Minecraft-MP.com. Get rewarded for each vote!">
-    <meta name="keywords" content="Minecraft, TrueCraft SMP, vote, server voting, Minecraft server, rewards">
-    <meta name="author" content="TrueCraft SMP">
-
-    <!-- Open Graph Meta Tags for Social Media Previews -->
-    <meta property="og:title" content="Vote for TrueCraft SMP">
-    <meta property="og:description" content="Help TrueCraft SMP grow by voting on TopMinecraftServers.org, MinecraftServers.org, and Minecraft-MP.com. Earn in-game rewards for every vote!">
+    <title>Vote for TrueCraft Network • Vote & Earn Rewards</title>
+    <meta name="description" content="Vote for TrueCraft Network on popular Minecraft server lists and earn amazing in-game rewards! Support our community and get exclusive perks.">
+    <meta name="keywords" content="vote, truecraft, network, minecraft, server, rewards, voting, toplist">
+    <meta property="og:title" content="Vote for TrueCraft Network • Vote & Earn Rewards">
+    <meta property="og:description" content="Vote for TrueCraft Network and earn exclusive rewards! Support our server on popular Minecraft server lists.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://truecraft.top/vote">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://truecraft-web.mcboss.top/vote.html">
-    <meta property="og:image" content="https://truecraft-web.mcboss.top/images/vote-preview-image.png">
-    <meta property="og:image:alt" content="TrueCraft SMP voting page with Minecraft server list logos">
-    <meta property="og:site_name" content="TrueCraft SMP">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vote for TrueCraft SMP">
-    <meta name="twitter:description" content="Support TrueCraft SMP by voting on top Minecraft server lists and earn in-game rewards! Visit TopMinecraftServers.org, MinecraftServers.org, and Minecraft-MP.com.">
-    <meta name="twitter:image" content="https://truecraft-web.mcboss.top/images/vote-preview-image.png">
-    <meta name="twitter:image:alt" content="TrueCraft SMP voting page with Minecraft server list logos">
-
+    
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">TrueCraft SMP</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/vote">Vote</a></li>
-                <li><a href="https://discord.truecraft.top/" target="_blank">Discord</a></li>
-                <li><a href="/timetally">Time Tally</a></li>
-                <li><a href="/feedback">Feedback</a></li>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="https://store.truecraft.top/"><i class="fas fa-shopping-cart"></i> Store</a></li>
+                <li><a href="/vote"><i class="fas fa-vote-yea"></i> Vote</a></li>
+                <li><a href="/rules"><i class="fas fa-gavel"></i> Rules</a></li>
+                <li><a href="https://knowledgebase.truecraft.top/" target="_blank"><i class="fas fa-book"></i> Knowledge Base</a></li>
             </ul>
-            <button class="mobile-menu">☰</button>
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-banner"></div>
+        <div class="hero-overlay"></div>
+        <div class="ash-particles" id="ash-particles"></div>
+        
         <div class="hero-content">
-            <h1>Vote for TrueCraft SMP</h1>
-            <p>Support our server by voting on the following sites and get rewarded for each vote!</p>
+            <!-- Left Side - Server IP -->
+            <div class="hero-left">
+                <div class="hero-text">
+                    <span class="main-text" onclick="copyToClipboard('mc.truecraft.top')" style="text-align: center;" >MC.TRUECRAFT.TOP</span>
+                    <span class="sub-text default" style="text-align: center;">Join Now</span>
+                    <span class="sub-text hover" style="text-align: center;">Click to Copy</span>
+                </div>
+            </div>
+
+            <!-- Center - Logo -->
+            <div class="hero-logo">
+                <img src="images/logo.png" alt="TrueCraft Network Logo">
+            </div>
+
+            <!-- Right Side - Discord -->
+            <div class="hero-right">
+                <div class="hero-text">
+                    <a href="https://discord.truecraft.top/" target="_blank" class="discord-link" style="text-align: center;">
+                        <span class="main-text">JOIN DISCORD</span>
+                        <span class="sub-text default">Community</span>
+                        <span class="sub-text hover">DISCORD.TRUECRAFT.TOP</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="info-section">
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>TopMinecraftServers.org</h3>
-                <p>Vote for TrueCraft SMP on TopMinecraftServers.org to help us climb the rankings! Players who vote receive rewards to enhance their gameplay experience.</p>
-                <a href="https://topminecraftservers.org/server/41364" target="_blank" class="btn primary">Vote Now</a>
+    <!-- Vote Content Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-header">
+                <h1>Vote for TrueCraft Network</h1>
+                <p>Support our server by voting on these popular Minecraft server lists and earn amazing rewards in return!</p>
             </div>
-            <div class="info-card">
-                <h3>MinecraftServers.org</h3>
-                <p>Show your support by voting on MinecraftServers.org. Every vote counts, and players are rewarded for their contribution!</p>
-                <a href="https://minecraftservers.org/server/677330" target="_blank" class="btn primary">Vote Now</a>
+
+            <!-- Voting Sites Section -->
+            <div class="voting-sites">
+                <div class="voting-header">
+                    <h2><i class="fas fa-vote-yea"></i> Voting Sites</h2>
+                    <p>Click on each site below to vote for TrueCraft Network. You can vote once every 24 hours on each site!</p>
+                </div>
+                
+                <div class="vote-sites-grid">
+                    <div class="vote-site">
+                        <div class="vote-site-header">
+                            <i class="fas fa-server"></i>
+                            <h3>MinecraftServers.org</h3>
+                        </div>
+                        <p>One of the largest Minecraft server lists with millions of players browsing daily.</p>
+                        <div class="vote-info">
+                            <span class="vote-reward"><i class="fas fa-gift"></i> 1 Vote Key + $500</span>
+                            <span class="vote-cooldown"><i class="fas fa-clock"></i> 24 Hours</span>
+                        </div>
+                        <a href="https://minecraftservers.org/vote/123456" target="_blank" class="vote-btn">
+                            <i class="fas fa-external-link-alt"></i> Vote Now
+                        </a>
+                    </div>
+
+                    <div class="vote-site">
+                        <div class="vote-site-header">
+                            <i class="fas fa-list"></i>
+                            <h3>Minecraft-Server-List</h3>
+                        </div>
+                        <p>Popular server listing platform with active community engagement and reviews.</p>
+                        <div class="vote-info">
+                            <span class="vote-reward"><i class="fas fa-gift"></i> 1 Vote Key + $400</span>
+                            <span class="vote-cooldown"><i class="fas fa-clock"></i> 24 Hours</span>
+                        </div>
+                        <a href="https://minecraft-server-list.com/vote/123456" target="_blank" class="vote-btn">
+                            <i class="fas fa-external-link-alt"></i> Vote Now
+                        </a>
+                    </div>
+
+                    <div class="vote-site">
+                        <div class="vote-site-header">
+                            <i class="fas fa-ranking-star"></i>
+                            <h3>TopG</h3>
+                        </div>
+                        <p>Well-established gaming server directory with comprehensive server rankings.</p>
+                        <div class="vote-info">
+                            <span class="vote-reward"><i class="fas fa-gift"></i> 1 Vote Key + $300</span>
+                            <span class="vote-cooldown"><i class="fas fa-clock"></i> 24 Hours</span>
+                        </div>
+                        <a href="https://topg.org/minecraft-servers/vote-123456" target="_blank" class="vote-btn">
+                            <i class="fas fa-external-link-alt"></i> Vote Now
+                        </a>
+                    </div>
+
+                    <div class="vote-site">
+                        <div class="vote-site-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Minecraft-mp</h3>
+                        </div>
+                        <p>Dedicated Minecraft multiplayer server directory with detailed server statistics.</p>
+                        <div class="vote-info">
+                            <span class="vote-reward"><i class="fas fa-gift"></i> 1 Vote Key + $350</span>
+                            <span class="vote-cooldown"><i class="fas fa-clock"></i> 24 Hours</span>
+                        </div>
+                        <a href="https://minecraft-mp.com/vote/123456" target="_blank" class="vote-btn">
+                            <i class="fas fa-external-link-alt"></i> Vote Now
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="info-card">
-                <h3>Minecraft-MP.com</h3>
-                <p>Cast your vote on Minecraft-MP.com to help spread the word about our friendly community. Get rewarded when you vote!</p>
-                <a href="https://minecraft-mp.com/server-s347171" target="_blank" class="btn primary">Vote Now</a>
+
+            <!-- Vote Instructions -->
+            <div class="vote-instructions">
+                <h2><i class="fas fa-info-circle"></i> How to Vote</h2>
+                <div class="instructions-grid">
+                    <div class="instruction-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Click Vote Button</h3>
+                            <p>Click the "Vote Now" button on any of the voting sites above</p>
+                        </div>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Enter Your Username</h3>
+                            <p>Type your exact Minecraft username in the voting form</p>
+                        </div>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Complete Captcha</h3>
+                            <p>Fill out any required verification steps on the voting site</p>
+                        </div>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Receive Rewards</h3>
+                            <p>Join the server to automatically receive your voting rewards!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
     </section>
 
-    <footer>
-        <p>© 2025 TrueCraft SMP. A friendly Minecraft community for everyone.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="TrueCraft Network Logo">
+                        <h3>TrueCraft Network</h3>
+                    </div>
+                    <p>Join thousands of players in the ultimate Minecraft experience. Start your adventure today!</p>
+                    <div class="ip-container" id="ipContainer" onclick="copyServerIP()">
+                        <i class="fas fa-copy"></i>
+                        <span class="ip-text">MC.TRUECRAFT.TOP</span>
+                    </div><br>
+                    <div class="social-links">
+                        <a href="https://discord.truecraft.top/" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@truecraftmc" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <ul>
+                        <li><a href="/terms" target="_blank">Terms of Service</a></li>
+                        <li><a href="/privacy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="/rules">Server Rules</a></li>
+                        <li><a href="https://knowledgebase.truecraft.top/" target="_blank">Knowledge Base</a></li>
+                        <li><a href="https://news.truecraft.top/" target="_blank">News</a></li>
+                        <li><a href="https://panel.truecraft.top/" target="_blank">Panel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> Store</h3>
+                    <p>Support the server and unlock exclusive perks, ranks, and cosmetics.</p>
+                    <a href="https://store.truecraft.top/" class="footer-btn"><i class="fas fa-shopping-cart"></i> Visit Store</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrueCraft Network. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <div class="toast">Vote submitted! Check your rewards in-game!</div>
-
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+            function copyServerIP() {
+            const container = document.getElementById('ipContainer');
+            const ipToCopy = 'mc.truecraft.top';
+            
+            // Copy to clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(ipToCopy).then(() => {
+                    showCopied();
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = ipToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopied();
+            }
+        }
+
+        function showCopied() {
+            const container = document.getElementById('ipContainer');
+            const icon = container.querySelector('i');
+            const text = container.querySelector('.ip-text');
+            
+            // Add copied class
+            container.classList.add('copied');
+            
+            // Change icon to check
+            icon.className = 'fas fa-check';
+            
+            // Change text temporarily
+            const originalText = text.textContent;
+            text.textContent = 'COPIED!';
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                container.classList.remove('copied');
+                icon.className = 'fas fa-copy';
+                text.textContent = originalText;
+            }, 2000);
+        }
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
         });
 
-        // Toast notification (for demonstration, shown briefly on page load)
-        window.addEventListener('load', () => {
-            const toast = document.querySelector('.toast');
-            toast.classList.add('show');
+        // Close menu when clicking links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('Server IP copied to clipboard!');
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('Server IP copied to clipboard!');
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            document.body.appendChild(notification);
+            
             setTimeout(() => {
-                toast.classList.remove('show');
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
             }, 3000);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Create ash particles
+        function createAshParticles() {
+            const ashContainer = document.getElementById('ash-particles');
+            
+            for (let i = 0; i < 60; i++) {
+                const ash = document.createElement('div');
+                ash.className = 'ash-particle';
+                
+                const leftPos = Math.random() * 100;
+                const duration = 8 + Math.random() * 8; // 8-16 seconds
+                const delay = Math.random() * 12; // 0-12 seconds delay
+                const drift = (Math.random() - 0.5) * 300; // Horizontal drift
+                const driftEnd = drift + (Math.random() - 0.5) * 200;
+                
+                ash.style.left = leftPos + '%';
+                ash.style.setProperty('--duration', duration + 's');
+                ash.style.setProperty('--delay', delay + 's');
+                ash.style.setProperty('--drift', drift + 'px');
+                ash.style.setProperty('--drift-end', driftEnd + 'px');
+                
+                ashContainer.appendChild(ash);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createAshParticles();
         });
     </script>
-    </body>
-</html>
 
+    <style>
+        /* Vote Page Specific Styles */
+        .vote-rewards {
+            background: var(--background-panel);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .rewards-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .rewards-header h2 {
+            color: var(--primary-light);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .rewards-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .reward-item {
+            background: var(--background-dark);
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .reward-item:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .reward-item i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .reward-item h3 {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .reward-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .voting-sites {
+            margin-bottom: 4rem;
+        }
+
+        .voting-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .voting-header h2 {
+            color: var(--primary-light);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .voting-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .vote-sites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .vote-site {
+            background: var(--background-panel);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vote-site:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .vote-site::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .vote-site:hover::before {
+            opacity: 1;
+        }
+
+        .vote-site-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vote-site-header i {
+            font-size: 2rem;
+            color: var(--primary-light);
+        }
+
+        .vote-site-header h3 {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .vote-site p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .vote-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .vote-reward, .vote-cooldown {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .vote-reward {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .vote-cooldown {
+            color: var(--text-muted);
+        }
+
+        .vote-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .vote-btn:hover {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(122, 63, 242, 0.4);
+        }
+
+        .vote-instructions {
+            background: var(--background-panel);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 4rem;
+        }
+
+        .vote-instructions h2 {
+            color: var(--primary-light);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .instruction-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 15px rgba(122, 63, 242, 0.3);
+        }
+
+        .step-content h3 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .vote-stats {
+            text-align: center;
+        }
+
+        .vote-stats h2 {
+            color: var(--primary-light);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--background-panel);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .vote-rewards {
+                padding: 2rem 1.5rem;
+            }
+
+            .rewards-header h2 {
+                font-size: 1.6rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .rewards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .reward-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .voting-header h2 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .vote-sites-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .vote-site {
+                padding: 2rem 1.5rem;
+            }
+
+            .vote-instructions {
+                padding: 2rem 1.5rem;
+            }
+
+            .vote-instructions h2 {
+                font-size: 1.6rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .instructions-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .instruction-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .vote-stats h2 {
+                font-size: 1.6rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rewards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .vote-site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .vote-info {
+                align-items: center;
+            }
+        }
+    </style>
+</body>
+</html>
